@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Warehouse_Intelo</string>
+    <string name="warehouse_management_app">Warehouse Management App</string>
+    <string name="documents">Documents</string>
+    <string name="contractors">Contractors</string>
+    <string name="contractor">Contractors</string>
+    <string name="document">Documents</string>
+</resources>
