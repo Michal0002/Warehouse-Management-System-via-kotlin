@@ -16,6 +16,9 @@
             android:name=".DocumentsViewActivity"
             android:exported="true" />
         <activity
+            android:name=".AddNewDocumentActivity"
+            android:exported="true" />
+        <activity
             android:name=".ContractorsViewActivity"
             android:exported="true" />
         <activity
