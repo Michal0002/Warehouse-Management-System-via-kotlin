@@ -122,6 +122,29 @@ class dbhelper (private val context: Context) :
         db.close()
         return documentsList
     }
+
+    fun contractorsList(): ArrayList<String> {
+        val contractorsList = ArrayList<String>()
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_CONTRACTORS"
+        val cursor: Cursor? = db.rawQuery(query, null)
+
+        cursor?.let {
+            val nameIndex = cursor.getColumnIndex(COL_CONTRACTOR_NAME)
+            val surnameIndex = cursor.getColumnIndex(COL_CONTRACTOR_SURNAME)
+
+            while (cursor.moveToNext()) {
+                val name = cursor.getString(nameIndex)
+                val surname = cursor.getString(surnameIndex)
+                val fullName = "$name $surname"
+                contractorsList.add(fullName)
+            }
+        }
+        cursor?.close()
+        db.close()
+        return contractorsList
+    }
+
     fun addDocument(date: String, symbol: String, contractor: String, product_name: String, unit: String, quantity: String): Boolean {
         val db = this.writableDatabase
         val values = ContentValues()

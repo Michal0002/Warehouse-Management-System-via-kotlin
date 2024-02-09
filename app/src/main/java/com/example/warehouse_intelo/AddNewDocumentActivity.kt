@@ -1,8 +1,10 @@
 package com.example.warehouse_intelo
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import dbase.dbhelper
@@ -18,13 +20,25 @@ class AddNewDocumentActivity : AppCompatActivity() {
         val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         val currentDate = dateFormat.format(Date())
 
+        val dbHelper = dbhelper(this)
+        val contractors = dbHelper.contractorsList()
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, contractors)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        val contractorSpinner = findViewById<Spinner>(R.id.spinner_contractorList)
+        contractorSpinner.adapter = adapter
+
+
+
+
         val buttonAddNewDocument = findViewById<Button>(R.id.button_addDocument)
 
         buttonAddNewDocument.setOnClickListener{
             val symbol = findViewById<EditText>(R.id.editTextText_symbol)
             val symbolText = symbol.text.toString()
-            val contractor = findViewById<EditText>(R.id.editTextText_contractor)
-            val contractorText = contractor.text.toString()
+            val contractor = findViewById<Spinner>(R.id.spinner_contractorList)
+            val contractorText = contractor.selectedItem.toString()
             val productName = findViewById<EditText>(R.id.editTextText_productName)
             val productNameText = productName.text.toString()
             val unit = findViewById<EditText>(R.id.editTextText_unit)
