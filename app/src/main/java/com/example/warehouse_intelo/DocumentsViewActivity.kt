@@ -10,15 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import dbase.dbhelper
 
 class DocumentsViewActivity : AppCompatActivity() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_documentsviewactivity)
 
         val dbHelper = dbhelper(this)
         val documentsList = findViewById<ListView>(R.id.listView_AllDocuments)
-        val documents = dbHelper.getAll()
+        val documents = dbHelper.getAllDocuments()
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, documents)
         documentsList.adapter = adapter
 

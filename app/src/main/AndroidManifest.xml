@@ -22,6 +22,9 @@
             android:name=".ContractorsViewActivity"
             android:exported="true" />
         <activity
+            android:name=".AddNewContractorActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
 
