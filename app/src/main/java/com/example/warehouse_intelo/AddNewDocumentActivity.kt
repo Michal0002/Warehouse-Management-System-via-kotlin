@@ -40,19 +40,28 @@ class AddNewDocumentActivity : AppCompatActivity() {
             val unit = findViewById<EditText>(R.id.editTextText_unit)
             val unitText = unit.text.toString()
             val quantity = findViewById<EditText>(R.id.editTextNumber_quantity)
-            val quantityText = quantity.text.toString().toInt()
+            val quantityText = quantity.text.toString()
 
-            if (unit.text.toString().isNotEmpty()){
-                val dbHelper = dbhelper(this)
-                val newDocument = dbHelper.addDocument( currentDate,  symbolText, contractorText, productNameText, unitText, quantityText)
+            if (symbolText.isEmpty() || productNameText.isEmpty() || unitText.isEmpty() || quantityText.isEmpty()) {
+                Toast.makeText(this, "Please fill in all fields.", Toast.LENGTH_SHORT).show()
+            } else {
+                try {
+                    val quantityInt = quantityText.toInt()
+                    if (quantityInt <= 0) {
+                        Toast.makeText(this, "Quantity must be greater than 0.", Toast.LENGTH_SHORT).show()
+                    } else {
+                        val dbHelper = dbhelper(this)
+                        val newDocument = dbHelper.addDocument(currentDate, symbolText, contractorText, productNameText, unitText, quantityInt)
 
-                if(newDocument){
-                    Toast.makeText(this, "New document has been added successfuly:  $productNameText", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show()
+                        if (newDocument) {
+                            Toast.makeText(this, "New document has been added successfully: $productNameText", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } catch (e: NumberFormatException) {
+                    Toast.makeText(this, "Invalid quantity.", Toast.LENGTH_SHORT).show()
                 }
-            }else {
-                Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show()
             }
         }
         val buttonGoBackMA = findViewById<Button>(R.id.button_goBack)

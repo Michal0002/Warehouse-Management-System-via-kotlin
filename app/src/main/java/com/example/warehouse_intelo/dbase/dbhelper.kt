@@ -11,7 +11,7 @@ import android.widget.Toast
 class dbhelper (private val context: Context) :
     SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
     companion object {
-        val DB_NAME = "Warehouse_"
+        val DB_NAME = "Warehouse_0"
         val DB_VERSION = 45
         val TABLE_DOCUMENTS = "Documents"
         val TABLE_CONTRACTORS = "Contractors"
@@ -21,7 +21,6 @@ class dbhelper (private val context: Context) :
         val COL_CONTRACTOR = "contractor"
         val COL_CONTRACTOR_NAME = "contractor_name"
         val COL_CONTRACTOR_SURNAME = "contractor_surname"
-
         val COL_PRODUCT_NAME = "product_name"
         val COL_UNIT = "unit"
         val COL_QUANTITY = "quantity"
