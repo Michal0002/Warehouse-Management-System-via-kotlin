@@ -29,11 +29,7 @@ class AddNewDocumentActivity : AppCompatActivity() {
         val contractorSpinner = findViewById<Spinner>(R.id.spinner_contractorList)
         contractorSpinner.adapter = adapter
 
-
-
-
         val buttonAddNewDocument = findViewById<Button>(R.id.button_addDocument)
-
         buttonAddNewDocument.setOnClickListener{
             val symbol = findViewById<EditText>(R.id.editTextText_symbol)
             val symbolText = symbol.text.toString()
@@ -44,9 +40,9 @@ class AddNewDocumentActivity : AppCompatActivity() {
             val unit = findViewById<EditText>(R.id.editTextText_unit)
             val unitText = unit.text.toString()
             val quantity = findViewById<EditText>(R.id.editTextNumber_quantity)
-            val quantityText = quantity.text.toString()
+            val quantityText = quantity.text.toString().toInt()
 
-            if (quantity.text.toString().toInt() >=1){
+            if (unit.text.toString().isNotEmpty()){
                 val dbHelper = dbhelper(this)
                 val newDocument = dbHelper.addDocument( currentDate,  symbolText, contractorText, productNameText, unitText, quantityText)
 
@@ -56,8 +52,13 @@ class AddNewDocumentActivity : AppCompatActivity() {
                     Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show()
                 }
             }else {
-                Toast.makeText(this, "liczbaSomething went wrong.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show()
             }
         }
+        val buttonGoBackMA = findViewById<Button>(R.id.button_goBack)
+        buttonGoBackMA.setOnClickListener{
+            finish()
+        }
+
     }
 }

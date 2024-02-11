@@ -145,7 +145,7 @@ class dbhelper (private val context: Context) :
         return contractorsList
     }
 
-    fun addDocument(date: String, symbol: String, contractor: String, product_name: String, unit: String, quantity: String): Boolean {
+    fun addDocument(date: String, symbol: String, contractor: String, product_name: String, unit: String, quantity: Int): Boolean {
         val db = this.writableDatabase
         val values = ContentValues()
         values.put(COL_DATE, date)

@@ -3,18 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#5E98F1">
+
+    <Button
+        android:id="@+id/button_goBack4"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="201dp"
+        android:layout_marginBottom="200dp"
+        android:backgroundTint="#3B70F1"
+        android:text="Back"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginBottom="117dp"
+        android:background="#BCD6FF"
+        app:layout_constraintBottom_toTopOf="@+id/button_goBack4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </FrameLayout>
 
     <EditText
         android:id="@+id/editTextText_contSurname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="52dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText_contName"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
@@ -32,12 +63,12 @@
         android:id="@+id/editTextText_contName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout2"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
@@ -53,12 +84,28 @@
 
     <Button
         android:id="@+id/button_addNewCont"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginBottom="278dp"
+        android:backgroundTint="#3B70F1"
+        android:text="Add contractor"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout2" />
+
+    <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="58dp"
-        android:text="Add contractor"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText_contSurname" />
+        android:layout_marginBottom="22dp"
+        android:text="Add new contractor"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

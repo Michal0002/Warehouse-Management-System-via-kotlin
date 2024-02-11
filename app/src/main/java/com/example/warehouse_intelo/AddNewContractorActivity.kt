@@ -29,7 +29,10 @@ class AddNewContractorActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show()
             }
-
+            val buttonGoBackMA = findViewById<Button>(R.id.button_goBack4)
+            buttonGoBackMA.setOnClickListener{
+                finish()
+            }
 
         }
     }

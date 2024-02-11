@@ -3,6 +3,7 @@ package com.example.warehouse_intelo
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
@@ -20,11 +21,18 @@ class DocumentsViewActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, documents)
         documentsList.adapter = adapter
 
-        val buttonAddNewDocument = findViewById<ImageButton>(R.id.imageButton_AddDocument)
+        val buttonAddNewDocument = findViewById<Button>(R.id.button_addDocument2)
         buttonAddNewDocument.setOnClickListener {
             val intent = Intent(this, AddNewDocumentActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Add ", Toast.LENGTH_SHORT).show()
         }
+
+        val buttonGoBackMA = findViewById<Button>(R.id.button_goBack2)
+        buttonGoBackMA.setOnClickListener{
+            finish()
+        }
+
+
     }
 }
