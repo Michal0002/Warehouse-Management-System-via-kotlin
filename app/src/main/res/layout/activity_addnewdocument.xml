@@ -3,16 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#5E98F1">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="25dp"
+        android:background="#BCD6FF"
+        app:layout_constraintBottom_toTopOf="@+id/button_addDocument"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
         android:id="@+id/editTextText_productName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="333dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
@@ -22,23 +37,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="114dp"
+        android:layout_marginTop="23dp"
         android:text="Symbol:"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
 
     <EditText
         android:id="@+id/editTextText_symbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_contractorList"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -57,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginBottom="1dp"
         android:text="Product name:"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextText_productName"
@@ -67,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="32dp"
         android:text="Unit:"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,38 +105,49 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
+        android:layout_marginBottom="51dp"
         android:text="Quantity:"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="@+id/textView12"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintStart_toEndOf="@+id/textView12" />
 
     <Button
         android:id="@+id/button_addDocument"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="91dp"
+        android:backgroundTint="#3B70F1"
         android:text="Add"
-        app:layout_constraintBottom_toTopOf="@+id/button_goBack"
-        app:layout_constraintStart_toStartOf="@+id/button_goBack" />
-
-    <Button
-        android:id="@+id/button_goBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Button"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_goBack"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#3B70F1"
+        android:text="Back"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_addDocument" />
 
     <EditText
         android:id="@+id/editTextNumber_quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="number"
         android:minHeight="48dp"
@@ -131,13 +158,37 @@
     <Spinner
         android:id="@+id/spinner_contractorList"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="166dp"
-        android:layout_marginBottom="164dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp"
         android:soundEffectsEnabled="true"
         android:splitMotionEvents="false"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextText_productName"
+        app:layout_constraintBottom_toBottomOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="@+id/editTextText_symbol"
         app:layout_constraintStart_toStartOf="@+id/editTextText_symbol"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText_symbol" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="New document"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="49dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/doc_image" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
