@@ -152,6 +152,8 @@ class dbhelper (private val context: Context) :
         values.put(COL_CONTRACTOR, contractor)
         values.put(COL_PRODUCT_NAME, product_name)
         values.put(COL_UNIT, unit)
+        values.put(COL_QUANTITY, quantity)
+
         val result = db.insert(TABLE_DOCUMENTS, null, values)
 
         if (result == -1L) {

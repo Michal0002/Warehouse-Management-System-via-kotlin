@@ -39,7 +39,7 @@ class AddNewDocumentActivity : AppCompatActivity() {
             val productNameText = productName.text.toString()
             val unit = findViewById<EditText>(R.id.editTextText_unit)
             val unitText = unit.text.toString()
-            val quantity = findViewById<EditText>(R.id.editTextNumber_quantity)
+            val quantity = findViewById<EditText>(R.id.editText_quantity)
             val quantityText = quantity.text.toString()
 
             if (symbolText.isEmpty() || productNameText.isEmpty() || unitText.isEmpty() || quantityText.isEmpty()) {

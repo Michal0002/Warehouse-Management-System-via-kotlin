@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button_goBack3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView_AllContractorser"
+        app:layout_constraintTop_toBottomOf="@+id/listView_AllContractors"
         tools:ignore="HardcodedText,VisualLintButtonSize" />
 
     <Button
@@ -33,7 +33,7 @@
         tools:ignore="HardcodedText,VisualLintButtonSize" />
 
     <ListView
-        android:id="@+id/listView_AllContractorser"
+        android:id="@+id/listView_AllContractors"
         android:layout_width="345dp"
         android:layout_height="450dp"
         android:background="#BCD6FF"
@@ -50,7 +50,7 @@
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/listView_AllContractorser"
+        app:layout_constraintBottom_toTopOf="@+id/listView_AllContractors"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
